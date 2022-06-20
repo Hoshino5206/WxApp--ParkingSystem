@@ -1,0 +1,60 @@
+<!--pages/mine/mine.wxml-->
+<!-- 头部 -->
+<view class="top">
+	<view class="center">
+		<view class="center_top">
+			<view class="center_img">
+				<block wx:if="{{!hasUserInfo}}">
+					<image src="../../icon/getUserInfo.png" bindtap="getUserProfile" />
+				</block>
+				<block wx:else>
+					<image src="{{userInfo.avatarUrl}}" mode="cover"></image>
+				</block>
+			</view>
+		</view>
+		<view class="center_down">
+			<view class="center_rank">
+				<block wx:if="{{!hasUserInfo}}">
+					<text class="rank_text" bindtap="getUserProfile">点击头像登录</text>
+				</block>
+				<block wx:else>
+					<block wx:if="{{userInfo.gender==1}}">
+						<image class="img_sex" src="../../icon/sex_boy.png"></image>
+					</block>
+					<block wx:else>
+						<image class="img_sex" src="../../icon/sex_gril.png" />
+					</block>
+					<text class="rank_text">{{userInfo.nickName}}</text>
+				</block>
+			</view>
+		</view>
+	</view>
+	<image src='http://docfile.funkingka.cn/FqzmiFqvXbHg-cfbquNRlawHUgHt' mode='scaleToFill' class='gif-wave'></image>
+</view>
+<!-- 主体 -->
+<view class="body">
+	<view class="body_center">
+		<van-grid class="van_grid" column-num="2" border="{{ false }}" gutter="{{  }}">
+			<van-grid-item use-slot link-type="navigateTo" url="../member/member" bindtap="menber_url">
+				<image class="body_img" src="../../icon/member.png"/>
+				<text class="rank_text">会员</text>
+			</van-grid-item>
+			<van-grid-item use-slot link-type="navigateTo" url="../" bindtap="coupon_url">
+				<image class="body_img" src="../../icon/coupon.png"/>
+				<text class="rank_text">优惠券</text>
+			</van-grid-item>
+			<van-grid-item use-slot link-type="navigateTo" url="../bindingLicense/bindingLicense" bindtap="bangdingLicense_url">
+				<image class="body_img" src="../../icon/bindingLicense.png"/>
+				<text class="rank_text">绑定车牌</text>
+			</van-grid-item>
+			<van-grid-item use-slot link-type="navigateTo" url="../feedback/feedback" bindtap="feedback_url">
+				<image class="body_img" src="../../icon/feedback.png"/>
+				<text class="rank_text">意见反馈</text>
+			</van-grid-item>
+		</van-grid>
+	</view>
+	<view class="img_top">
+		<image class="bg_img" src="../../images/bg.gif"></image>
+	</view>
+</view>
+<van-toast id="van-toast" />

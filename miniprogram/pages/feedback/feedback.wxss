@@ -1,0 +1,43 @@
+/* pages/feedback/feedback.wxss */
+.function_fab {
+  margin-top: 10px;
+  width: 100%;
+  position: fixed;
+  height: 100%;
+}
+
+.function_sub {
+  width: 93%;
+  height: 30%;
+  padding-top: 100px;
+  box-shadow: 0rpx 10rpx 50rpx 10rpx rgba(85, 85, 85, 0.10);
+  border-radius: 6px;
+  margin: 15rpx;
+  padding: 10rpx;
+}
+
+.function_button {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.function_submit {
+  position: initial;
+  margin-bottom: 20px;
+  background-color: #b3b3bb;
+  box-shadow: 0rpx 10rpx 50rpx 10rpx rgba(85, 85, 85, 0.10);
+  border-radius: 6px;
+  margin: 25rpx;
+  padding: 10rpx;
+}
+
+.function_text {
+  font-size: 15px;
+  display: block;
+  padding: 0.3vh 0;
+  word-wrap: break-word;
+  word-break: normal;
+  text-align: justify;
+  flex-direction: row;
+}

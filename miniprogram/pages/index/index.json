@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "mp-dialog": "weui-miniprogram/dialog/dialog",
+    "mp-icon": "weui-miniprogram/icon/icon",
+    "mp-tabbar": "weui-miniprogram/tabbar/tabbar"
+  },
+  "navigationBarBackgroundColor":"#ADD8E6",
+  "navigationBarTitleText": "智能泊位手持机停车系统",
+  "enablePullDownRefresh": true
+}

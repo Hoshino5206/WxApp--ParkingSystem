@@ -1,0 +1,13 @@
+/* pages/nearby/nearby.wxss */
+.page-section-gap{
+  box-sizing: border-box;
+  padding: 0 0rpx;
+}
+
+cover-image {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+}

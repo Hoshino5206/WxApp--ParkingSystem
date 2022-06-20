@@ -1,0 +1,10 @@
+<!--pages/feedback/feedback.wxml-->
+<view class="function_fab" style="position: fixed; left: 0rpx; top: 4rpx">
+    <view class="function_sub">
+    <textarea class="function_text" placeholder="请输入您留言的内容，60字以内" maxlength="60" ></textarea>
+    </view>
+    <view class="function_button">
+        <button form-type="submit" class="function_submit" bindtap="feedback_btn"> 提交 </button>
+    </view>
+</view>
+<van-toast id="van-toast" />

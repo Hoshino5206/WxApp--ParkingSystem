@@ -1,0 +1,125 @@
+/* pages/mine/mine.wxss */
+Page {
+  font-size: 14px;
+}
+
+.top {
+  width: 100%;
+  height: 417rpx;
+  display: flex;
+  box-sizing: border-box;
+  background: #23EBB9;
+  padding-top: 15px;
+  position: relative;
+}
+
+.center {
+  width: 95%;
+  height: 170px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.center_top {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.center_img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: auto;
+}
+
+.center_img image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.center_img .user_head {
+  width: 100%;
+  height: 100%;
+}
+
+.center_down {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 35px;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+
+.center_rank {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.rank_text {
+  height: 35px;
+  line-height: 35px;
+  margin-left: 10rpx;
+  color: #AAAAAA;
+}
+
+.gif-wave {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  mix-blend-mode: screen;
+  height: 100rpx;
+}
+
+.img_sex {
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 15rpx;
+}
+
+.body_img {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.body_center {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.van_grid{
+  padding-left: 0%;
+  padding-right: 0%;
+  padding-bottom: 0%;
+}
+
+.van-grid-item {
+  margin-top: 0rpx;
+  border-radius: 5px;
+  box-shadow: 0rpx 10rpx 20rpx 5rpx rgba(85, 85, 85, 0.10); 
+  background-color: transparent;
+}
+
+.bg_img{
+  height: 33%;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}

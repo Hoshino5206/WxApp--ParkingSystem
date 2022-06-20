@@ -1,0 +1,91 @@
+<!--pages/index/index.wxml-->
+<!-- 顶部下拉选项 -->
+<view class="index_sectionMenu">
+  <picker mode="selector" bindchange="bindPickerChange" range="{{parkingArray}}" range-key="{{'p_name'}}"
+    value="{{index}}">
+    <view class="picker_items">
+      {{parkingArray[index].p_name}}
+      <mp-icon class="icon_done" type="field" icon="done" color="rgb(0, 0, 0)" size="{{21}}"></mp-icon>
+      <!-- <mp-icon class="icon_more" type="field" icon="more" color="black" size="{{23}}"sty></mp-icon> -->
+    </view>
+  </picker>
+</view>
+<!-- 滑块视图容器 -->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150" />
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 车牌号码输入框 -->
+<view class="carNumber">
+  <view class="carNumber_title">请输入车牌号码
+  </view>
+  <!-- 车牌号头两位 -->
+  <view class="carNumber-items">
+    <!-- <view class="carNumber-items-box" bindtap='openKeyboard'>
+      <view class="carNumber-items-province carNumber-items-box-list">{{carnum[0] || ''}}</view>
+      <view class="carNumber-items-En carNumber-items-box-list">{{carnum[1] || ''}}</view>
+    </view> -->
+    <view class="carNumber-item" bindtap='openKeyboard'>{{carnum[0] || ''}}</view>
+    <view class="carNumber-item" bindtap='openKeyboard'>{{carnum[1] || ''}}</view>
+    <!-- 车牌号后五位 -->
+    <view class="carNumber-item" bindtap='openKeyboard'>{{carnum[2] || ''}}</view>
+    <view class="carNumber-item" bindtap='openKeyboard'>{{carnum[3] || ''}}</view>
+    <view class="carNumber-item" bindtap='openKeyboard'>{{carnum[4] || ''}}</view>
+    <view class="carNumber-item" bindtap='openKeyboard'>{{carnum[5] || ''}}</view>
+    <view class="carNumber-item" bindtap='openKeyboard'>{{carnum[6] || ''}}</view>
+    <!-- 新能源 -->
+    <view class="carNumber-item {{showNewPower ? '': 'carNumber-item-newpower'}}">
+      <view wx:if="{{!showNewPower}}">
+        <view class="carNumber-newpower-add">新能源</view>
+      </view>
+      <view wx:if="{{showNewPower}}">{{carnum[7] || ''}}</view>
+    </view>
+  </view>
+</view>
+<!-- 确认提交车牌 -->
+<view class="btn_item">
+  <van-button class="carNumber_btn1" type="info" icon="add-o" color="#8B4C39" bindtap="showPowerBtn">
+    <view wx:if="{{!showNewPower}}">{{carType[0]}}</view>
+    <view wx:else>{{carType[1]}}</view>
+  </van-button>
+  <van-button class="carNumber_btn2" type="primary" bindtap="submitNumber">查询</van-button>
+  <mp-dialog title="提示" show="{{showOneButtonDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
+    <view>查询失败，请重新输入</view>
+  </mp-dialog>
+</view>
+<!-- 扫码缴费 -->
+<view class="bottom_item">
+  <button class="scan_btn" form-type="submit" disabled="{{false}}" bindtap='saoma' style="width:80%">
+    扫码缴费
+  </button>
+</view>
+<!-- 虚拟键盘 -->
+<view class="keyboard" hidden='{{!KeyboardState}}'>
+  <view class="keyboardClose">
+    <view class="keyboardClose_btn" bindtap='closeKeyboard'>关闭</view>
+  </view>
+  <!-- 省份简写键盘 -->
+  <view class="keyboard-item" hidden="{{carnum[0]}}">
+    <view class="keyboard-line" wx:for="{{provinces}}" wx:key="{{index}}">
+      <view class="keyboard-btn" wx:for="{{item}}" wx:key="{{index}}" data-val="{{itemlist}}" wx:for-item="itemlist"
+        bindtap='bindChoose'>{{itemlist}}</view>
+    </view>
+    <view class="keyboard-del" bindtap='bindDelChoose'>
+      <text class="font_family icon-shanchu keyboard-del-font">清除</text>
+    </view>
+  </view>
+  <!-- 车牌号码选择键盘 -->
+  <view class="keyboard-item iscarnumber" hidden="{{!carnum[0]}}">
+    <view class="keyboard-line" wx:for="{{numbers}}" wx:key="{{index}}">
+      <view class="keyboard-btn" wx:for="{{item}}" wx:key="{{index}}" data-val="{{itemlist}}" wx:for-item="itemlist"
+        bindtap='bindChoose'>{{itemlist}}</view>
+    </view>
+    <view class="keyboard-del" bindtap='bindDelChoose'>
+      <text class="font_family icon-shanchu keyboard-del-font">清除</text>
+    </view>
+  </view>
+</view>
+<van-toast id="van-toast" />

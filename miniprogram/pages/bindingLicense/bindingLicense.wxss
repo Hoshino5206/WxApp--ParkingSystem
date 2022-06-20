@@ -1,0 +1,180 @@
+/* pages/bindingLicense/bindingLicense.wxss */
+
+/* 底边注释 */
+.carNumber_title{
+margin-bottom:.3em;
+color:#999;
+font-size:14px;
+text-align: center;
+}
+/* 车牌号码 */
+.carNumber-items{
+  text-align: center;
+  border-radius: 25%;
+}
+/* 数字键盘-省份列表 */
+.carNumber-items-box{
+  width: 158rpx;
+  height: 90rpx;
+  border: 2rpx solid #CCCCCC;
+  border-radius: 4rpx;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  margin-right: 30rpx;
+}
+.carNumber-items-province{
+  border-right: 1rpx solid #ccc;
+}
+.carNumber-items-box-list{
+  width: 76rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+  margin:10rpx 0;
+  vertical-align: middle;
+}
+/* 虚拟键盘-新能源 */
+.carNumber-items-box::after{
+  content: "";
+  width: 6rpx;
+  height: 6rpx;
+  position: absolute;
+  right: -22rpx;
+  top: 40rpx;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+/* 虚拟键盘-车牌号后五位 */
+.carNumber-item{
+  width: 76rpx;
+  height: 90rpx;
+  font-size: 18px;
+  text-align: center;
+  border: 2rpx solid #CCCCCC;
+  border-radius: 25rpx;
+  line-height: 90rpx;
+  display: inline-block;
+  margin:0 4rpx;
+  vertical-align: middle;
+}
+/* 新能源 */
+.carNumber-item-newpower{
+  border: 2rpx dashed #A8BFF3;
+  background-color: #F6F9FF;
+  color: #A8BFF3;
+  font-size: 12px;
+  line-height: 45rpx;
+}
+/* 新能源按钮 */
+.carNumber-newpower-add{
+  font-size: 18px;
+}
+/* 虚拟键盘 */
+.keyboard{
+  height: auto;
+  background: #d1d5d9;
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  left:0;
+}
+/* 虚拟键盘列表 */
+.keyboard-item{
+  padding:10rpx 0 5rpx 0;
+  position: relative;
+  display: block;
+}
+/* 虚拟键盘-行 */
+.keyboard-line{
+  margin:0 auto;
+  text-align: center;
+}
+/* 虚拟键盘-数字键-行 */
+.iscarnumber .keyboard-line{
+  text-align: left;
+  margin-left: 5rpx;
+}
+/* 虚拟键盘-单个按钮 */
+.keyboard-btn{
+  font-size: 17px;
+  color: #333333;
+  background: #fff;
+  display: inline-block;
+  padding:18rpx 0; 
+  width: 63rpx;
+  text-align: center;
+  box-shadow: 0 2rpx 0 0 #999999;
+  border-radius: 10rpx;
+  margin:5rpx 6rpx;
+}
+/* 虚拟键盘-删除按钮 */
+.keyboard-del{
+  font-size: 17px;
+  color: #333333;
+  background: #A7B0BC;
+  display: inline-block;
+  padding: 14rpx 8rpx;
+  box-shadow: 0 2rpx 0 0 #999999;
+  border-radius: 10rpx;
+  margin: 5rpx;
+  position: absolute;
+  bottom: 6rpx;
+  right: 20rpx;
+}
+/* 虚拟键盘-删除按钮的大小 */
+.keyboard-del-font{
+  font-size:17px;
+}
+/* 虚拟键盘关闭键 */
+.keyboardClose_btn{
+  float: right;
+  line-height: 70rpx;
+  font-size: 15px;
+  padding-right: 30rpx;
+}
+/* 关闭虚拟键盘 */
+.keyboardClose {
+  height: 70rpx;
+  background-color: #f7f7f7;
+  overflow: hidden;
+}
+/* 确认按钮 */
+.carNumber_btn{
+  width: 700rpx;
+  height: 80rpx;
+  margin-top: 35px;
+  background-color: burlywood;
+  color: white;
+  border-radius: 14rpx;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 父布局 */
+.function_scope{
+  box-shadow: 0rpx 10rpx 50rpx 10rpx rgba(85, 85, 85, 0.10);
+  border-radius: 15px;
+  margin: 15rpx;
+  padding:  10rpx;
+}
+
+/* 标题字体布局 */
+.carNumber_parTitle{
+  text-align: center;
+  padding-top: 43px;
+  padding-bottom: 30%;
+  font-size:6vw;
+  font-weight: 800;
+  letter-spacing:3px;
+}
+
+.carNumber_text{
+  text-align: center;
+  color:rgba(56, 32, 190, 0.726)
+}

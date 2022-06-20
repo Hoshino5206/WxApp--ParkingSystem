@@ -1,0 +1,76 @@
+{
+  "entryPagePath": "pages/index/index",
+  "pages": [
+    "pages/index/index",
+    "pages/nearby/nearby",
+    "pages/order/order",
+    "pages/mine/mine",
+    "pages/order_pay/order_pay",
+    "pages/order_printlist/order_printlist",
+    "pages/member/member",
+    "pages/bindingLicense/bindingLicense",
+    "pages/feedback/feedback"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "icon/selece_index.png",
+      "selectedIconPath": "icon/selected_index.png"
+    },
+    {
+      "pagePath": "pages/nearby/nearby",
+      "text": "附近",
+      "iconPath": "icon/select_nearby.png",
+      "selectedIconPath": "icon/selected_nearby.png"
+    },
+    {
+      "pagePath": "pages/order/order",
+      "text": "订单",
+      "iconPath": "icon/select_order.png",
+      "selectedIconPath": "icon/selected_order.png"
+    },
+    {
+      "pagePath": "pages/mine/mine",
+      "text": "我的",
+      "iconPath": "icon/select_mine.png",
+      "selectedIconPath": "icon/selected_mine.png"
+    }],
+    "color": "#dbdbdb",
+    "selectedColor": "#1296db"
+  },
+  "networkTimeout": {
+    "request": 30000,
+    "connectSocket": 30000 ,
+    "downloadFile": 30000,
+    "uploadFile": 30000
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "useExtendedLib": {
+    "kbone": true,
+    "weui": true
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "usingComponents": {
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-button": "@vant/weapp/button/index",
+    "mp-dialog": "weui-miniprogram/dialog/dialog",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  }
+}

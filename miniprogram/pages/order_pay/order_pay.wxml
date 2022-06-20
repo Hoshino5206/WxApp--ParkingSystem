@@ -1,0 +1,67 @@
+<!--pages/transval/transval.wxml-->
+<block>
+    <view class="function_fab">
+        <view class="function_sun1">
+            <text class="function_title">{{parkName}}</text>
+            <text class="function_packcode">车牌号：{{carNum}}</text>
+            <view class="function_list12">
+                <view>
+                    <text class="function_list1">创建时间：</text>
+                    <text class="function_list1">订单编号：</text>
+                    <text class="function_list1">停车时长：</text>
+                    <text class="function_list1">停车费用：</text>
+                    <text class="function_list1">是否会员：</text>
+                </view>
+                <view class="function_list2_">
+                    <text class="function_list2">{{enterTime}}</text>
+                    <text class="function_list2">{{code}}</text>
+                    <text class="function_list2">{{time}}</text>
+                    <text class="function_list2">{{consume}}</text>
+                    <text class="function_list2" wx:if="{{member}}">会员</text>
+                    <text class="function_list2" wx:else>非会员</text>
+                </view>
+            </view>
+            <view class="function_list12">
+                <text class="function_pay">需付款：</text>
+                <text class="function_pay_end" wx:if="{{member}}">￥{{consume*0.8}}</text>
+                <text class="function_pay_end" wx:else>￥{{consume}}</text>
+            </view>
+        </view>
+
+        <view class="function_sun2">
+            <text class="function_run_information">入场信息</text>
+            <view class="function_list12">
+                <view>
+                    <text class="function_underlist">☑入场时间:</text>
+                    <text class="function_underlist">☑入场位置:</text>
+                    <text class="function_underlist">☑放行方式:</text>
+                </view>
+                <view class="function_list2_">
+                    <text class="function_underlist_1">{{enterTime}}</text>
+                    <text class="function_underlist_1">{{parkName}}</text>
+                    <text class="function_underlist_1">自动抬杆</text>
+                </view>
+            </view>
+            <text class="function_run_information">出场信息</text>
+            <view class="function_list12">
+                <view>
+                    <text class="function_underlist">☑出场时间：</text>
+                    <text class="function_underlist">☑出场位置:</text>
+                    <text class="function_underlist">☑放行方式:</text>
+                </view>
+                <view class="function_list2_">
+                    <text class="function_underlist_1">{{outTime}}</text>
+                    <text class="function_underlist_1">{{parkName}}</text>
+                    <text class="function_underlist_1">自动抬杆</text>
+                </view>
+            </view>
+            <view wx:if="{{PaymentStatus==false}}">
+                <button class="function_button" style="width:76%" bindtap="pay_btn">支付</button>
+            </view>
+            <view wx:else>
+                <button class="function_button" style="width:76%" disabled="disabled">已支付</button>
+            </view>
+        </view>
+    </view>
+</block>
+<van-toast id="van-toast" />

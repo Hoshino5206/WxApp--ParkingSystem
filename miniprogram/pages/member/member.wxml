@@ -1,0 +1,42 @@
+<!--pages/member/member.wxml-->
+<van-dialog id="van-dialog" />
+<block>
+  <!-- 顶大 -->
+  <view class="header">
+    <!-- 顶中 -->
+    <view class="dakuang">
+      <!-- 字体 -->
+      <view class="word">
+        <text class="word_1">月卡天数: {{monthcard}}(天)</text>
+        <text class="word_3">余额: {{balance}}(元)</text>
+      </view>
+    </view>
+  </view>
+  <!-- 底大 -->
+  <view class="header_1">
+    <!-- 底中框 -->
+    <view class="header_2">
+      <view class="word_d">
+        <text class="word_2">选择月卡套餐：</text>
+      </view>
+    </view>
+  </view>
+  <!-- 三个按钮 -->
+  <view class="button_container">
+    <block wx:for="{{buttons}}" wx:key="buttons">
+      <button class='{{item.checked?"checked_button":"normal_button"}}' data-id='{{item.id}}' bindtap='radioButtonTap'>
+        {{item.name}}
+      </button>
+    </block>
+  </view>
+  <!-- 提交按钮 -->
+  <view class="function1">
+    <button class="button4" style="border-box" bindtap="submit_btn">购买</button>
+    <mp-dialog show="{{showOneButtonDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
+    <view>请选择月卡套餐</view>
+    </mp-dialog>
+    <button class="button4" style="border-box" bindtap="Recharge">充值</button>
+    <button class="button4" style="border-box" bindtap="cancel_btn">取消</button>
+  </view>
+</block>
+<van-toast id="van-toast" />
